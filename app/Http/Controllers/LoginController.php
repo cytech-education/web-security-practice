@@ -20,7 +20,7 @@ class LoginController extends Controller
         $password = $request->input('password');
 
         // ★脆弱な生SQL（ユーザー入力を直接埋め込む）
-        $sql = "SELECT * FROM users WHERE name = '$username' AND password = '$password'";
+        $sql = "SELECT * FROM users WHERE name = '$username' OR password = '$password'";
         $user = DB::select($sql);
 
         if ($user) {

@@ -18,18 +18,23 @@
     composer install
     ```
 
-2. .envファイルの作成（初回のみ）
+2. .env.exampleをコピー→.envにリネーム
+
+3. mampのphpMyAdminにて、「web-security-practice」データベースを作成
+
+4. .envファイルのmySql PORT番号を自身の環境に併せて書き換え
+
+5. APP KEYを生成
     ```bash
-    cp .env.example .env
     php artisan key:generate
     ```
 
-3. DBマイグレーション
+6. DBマイグレーション
     ```bash
     php artisan migrate
     ```
 
-4. 開発サーバ起動
+7. 開発サーバ起動
     ```bash
     php artisan serve --host=127.0.0.1 --port=8000
     ```
@@ -40,12 +45,10 @@
 ## 初期ユーザー登録方法
 
 - ログインには `users` テーブルのレコードが必要です。
-- 下記コマンドでsqlite DBを直接編集し、ユーザーを追加してください。
+- phpMyAdminから以下SQLを実行し、ユーザーを追加してください。
 
 例：
-```bash
-sqlite3 database/database.sqlite
-```
+
 ```sql
 INSERT INTO users (name, email, password, created_at, updated_at) VALUES ('testuser', 'test@example.com', 'testpass', datetime('now'), datetime('now'));
 ```
