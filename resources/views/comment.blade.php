@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>コメント投稿画面（XSS練習用）</title>
+    <title>KingdomSNS タイムライン</title>
     <style>
         body { font-family: sans-serif; background: #f8f8f8; }
         .container { background: #fff; padding: 2em; margin: 3em auto; width: 500px; border-radius: 8px; box-shadow: 0 2px 8px #ccc; }
@@ -20,7 +20,8 @@
             @csrf
             <button type="submit" style="background:#dc3545;">ログアウト</button>
         </form>
-        <h2>コメント投稿（XSS脆弱性あり）</h2>
+        <h1>KingdomSNS</h1>
+        <h2>コメントを投稿</h2>
         <div>ログイン中：<span class="user">{{ $user }}</span></div>
         <form method="POST" action="{{ route('comment.post') }}">
             @csrf

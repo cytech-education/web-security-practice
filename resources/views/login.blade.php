@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>脆弱ログイン画面（SQLi練習用）</title>
+    <title>KingdomSNS</title>
     <style>
         body { font-family: sans-serif; background: #f8f8f8; }
         .login-box { background: #fff; padding: 2em; margin: 3em auto; width: 350px; border-radius: 8px; box-shadow: 0 2px 8px #ccc; }
@@ -14,7 +14,8 @@
 </head>
 <body>
     <div class="login-box">
-        <h2>ログイン（SQLインジェクション脆弱性あり）</h2>
+        <h1>KingdomSNS</h1>
+        <h2>ログイン</h2>
         @if ($errors->has('login'))
             <div class="error">{{ $errors->first('login') }}</div>
         @endif
