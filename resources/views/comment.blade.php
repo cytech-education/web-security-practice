@@ -19,6 +19,9 @@
         <div>
             <button type="button" onclick="window.location.href='{{ route('download') }}'">ファイルダウンロード</button>
             <button type="button" onclick="window.location.href='{{ route('upload') }}'">ファイルアップロード</button>
+            <button type="button" onclick="window.location.href='{{ route('profile') }}'">プロフィールを見る</button>
+            <button type="button" onclick="window.location.href='{{ route('settings') }}'">通知設定</button>
+            <button type="button" onclick="window.location.href='{{ route('redirect.go', ['url' => 'https://example.com']) }}'">外部サイトへ移動</button>
         </div>
         <form class="logout" method="POST" action="{{ route('logout') }}">
             @csrf
@@ -42,6 +45,9 @@
                 </div>
             @endforeach
         </div>
+    </div>
+    <div>
+        <a href="{{ route('debug') }}" style="float: right;">debug</a>
     </div>
 </body>
 </html>

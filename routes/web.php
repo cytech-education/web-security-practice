@@ -5,6 +5,10 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\DebugController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\RedirectController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,3 +35,16 @@ Route::get('/download/file', [DownloadController::class, 'download'])->name('dow
 Route::get('/upload', [UploadController::class, 'show'])->name('upload');
 // ファイルアップロード処理（脆弱: 検証なし）
 Route::post('/upload', [UploadController::class, 'upload'])->name('upload.post');
+
+// 危険なデバッグツール群
+Route::get('/debug', [DebugController::class, 'show'])->name('debug');
+
+// ユーザープロフィール（脆弱: IDOR）
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
+
+// メール通知設定（脆弱: CSRF + GETで状態変更）
+Route::get('/settings', [SettingsController::class, 'show'])->name('settings');
+Route::get('/settings/update', [SettingsController::class, 'update'])->name('settings.update');
+
+// 任意リダイレクト（脆弱: Open Redirect）
+Route::get('/go', [RedirectController::class, 'go'])->name('redirect.go');
