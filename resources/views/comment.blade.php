@@ -16,6 +16,10 @@
 </head>
 <body>
     <div class="container">
+        <div>
+            <button type="button" onclick="window.location.href='{{ route('download') }}'">ファイルダウンロード</button>
+            <button type="button" onclick="window.location.href='{{ route('upload') }}'">ファイルアップロード</button>
+        </div>
         <form class="logout" method="POST" action="{{ route('logout') }}">
             @csrf
             <button type="submit" style="background:#dc3545;">ログアウト</button>

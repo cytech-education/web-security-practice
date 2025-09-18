@@ -1,0 +1,8 @@
+- [x] 追加する脆弱性の選定と設計
+- [x] routes/web.phpに脆弱ルート追加
+- [x] DownloadController作成（ディレクトリトラバーサル脆弱性）
+- [x] UploadController作成（ファイルアップロード検証不備）
+- [x] download.blade.php作成
+- [x] upload.blade.php作成
+- [x] 脆弱性リストと攻撃方法のMarkdown作成
+- [x] 動作確認
