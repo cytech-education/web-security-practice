@@ -55,23 +55,6 @@ INSERT INTO users (name, email, password, created_at, updated_at) VALUES ('testu
 
 ---
 
-## 脆弱性再現例
-
-### 1. SQLインジェクション（ログイン画面）
-
-- ユーザー名欄に `' OR '1'='1` などを入力し、任意のパスワードでログイン可能
-- 攻撃例：
-    - ユーザー名：`' OR '1'='1`
-    - パスワード：任意
-
-### 2. XSS（コメント投稿画面）
-
-- コメント欄に `<script>alert('XSS!')</script>` などを入力し、アラートが表示される
-- 攻撃例：
-    - コメント：`<script>alert('XSS!')</script>`
-
----
-
 ## 注意事項
 
 - 本アプリは**学習・演習用**です。実運用・本番環境での利用は禁止です。
@@ -81,8 +64,7 @@ INSERT INTO users (name, email, password, created_at, updated_at) VALUES ('testu
 ---
 
 ## 参考教材
-
-- 250908_セキュリティ_台本.md
+docsディレクトリ内
 - サンプル脆弱Webアプリ設計図.md
 - 捜査ツール_攻撃コードリスト.md
 - 防犯マニュアル_攻撃手法と対策.md
