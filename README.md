@@ -47,7 +47,7 @@
 例：
 
 ```sql
-INSERT INTO users (name, email, password, created_at, updated_at) VALUES ('testuser', 'test@example.com', 'testpass', datetime('now'), datetime('now'));
+INSERT INTO users (name, email, password, created_at, updated_at) VALUES ('testuser', 'test@example.com', 'testpass', NOW(), NOW());
 ```
 
 ---
